@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css" />
+
+  <link rel="stylesheet" href="../stylesheets/style2.css">
+  <title>TEMPO</title>
+</head>
+<body>
+   <div id="main">
+        <div id="side">
+            <div class="nav1"><div class="lo"><img src="../images/TEMPO (1).gif" alt=""></div></div>
+            <div class="nav2"><div id="metric" class="ico"><i class="ri-celsius-line"></i></div>
+            <div id="imperial" class="ico"><i class="ri-fahrenheit-line"></i></div>
+            <div class="ico"> <i class="bi bi-brightness-high-fill" id="toggleDark"></i></div>
+           </div>
+            <div class="nav3"><div class="ico"><a href="/"><i class="ri-arrow-left-circle-fill"></i></a></div></div>
+        </div>
+        <div id="left">
+            <div id="lnav">
+                <div class="lnavo"><h1>Hello!</h1></div>
+                <div id="lnavoo" class="lnavo">
+                  <form id="autoS" action="/weather" method="post">
+                    <div id="amto">
+                    <input type="text" id="autoComplete" name="name" placeholder="Search for Cities" autocomplete="off" tabindex="1">
+                    <button id="#che"><i class="ri-search-eye-line"></i></button>
+                    </div>
+                    <div id="matches"></div>
+                  
+                  </form>
+                </div>
+            </div>
+            <div id="temp">
+                <div id="secc" class="tempe">
+                 
+                    <!-- <img id="secne" src="../images/<%-weatherData.weather[0].main%>.gif" alt=""> -->
+                  
+                    <div id="wea"><div id="cirr"> <img src=<%='http://openweathermap.org/img/wn/' + weatherData.weather[0].icon + "@2x.png"%> alt=""></div> <h2>Weather</h2> <h4>Check Your Weather</h4> </div>
+                    <div id="ted"><div id="impm" class="ten"><h1><%=Math.floor(weatherData.main.temp)%> °C </h1></div><div class="mi"><h5><%=Math.floor(weatherData.main. temp_min)%>°C</h5></div><div class="ty"><h4><%=weatherData.weather[0].description%></h4></div></div>
+                    <div class="opt">
+                        <div class="opi"><div class="to"><h5>Max/Min</h5></div><div id="mina" class="pe"><h3><%=weatherData.main. temp_max%>°C/<%=weatherData.main. temp_min%>°C</h3></div></div>
+                        <div class="opi"><div class="to"><h5>Humidity</h5></div><div class="pe"><h3><%=weatherData.main.humidity%>%</h3></div></div>
+                        <div class="opi"><div class="to"><h5>Feels Like</h5></div><div id="feel" class="pe"><h3><%=Math.floor(weatherData.main.feels_like)%> °C</h3></div></div>
+                    </div>
+                </div>
+                <div class="tempe">
+                    <img src="../images/windoo.gif" alt="">
+                    <div id="wea">
+                        <div id="cirr"><img src="../images/air.png" alt=""></div>
+                        <h2>Air</h2>
+                        <h4>Know your wind speed & direction</h4>
+                    </div>
+                    <div id="ted"><div class="ten"><h1><%=Math.floor(weatherData.wind.speed)*3.60%> km/hr</h1></div><div class="fl"></div><div class="ty"><h4><% var di = [ '⬆ N','↗ NE','→ E','↘ SE','⬇ S','↙ SW','⬅ W','↖ NW']%> <%= di[Math.floor(weatherData.wind.deg/45)%8]%></h4></div></div>
+                    <div class="opt">
+                        <div class="opi"><div class="to"><h5>Pressure</h5></div><div class="pe"><h3><%=weatherData.main.pressure%> PA</h3></div></div>
+                        <div class="opi"><div class="to"><h5>Visibility</h5></div><div class="pe"><h3><%=weatherData.visibility/1000%> KM</h3></div></div>
+                        <div class="opi"><div class="to"><h5>Gust</h5></div><div class="pe"><h3><%=Math.floor(weatherData.wind.gust)%></h3></div></div>
+                    </div>
+                </div>
+            </div>
+            <div id="temp1">
+                <div id="seccc" class="tempe2">
+                  
+                    <div id="weaa"><h2>Tommorow</h2></div>
+                    <div id="tedd"><h1><%=weatherData.name%> , <%=weatherData.sys.country%></h1></div>
+                    <div id="bee"><div class="ttr"><h1><%=Math.floor(fiveDayweather.list[11].main.temp)%> °C</h1></div><div class="re"><h4><%=fiveDayweather.list[11].weather[0].description%></h4></div></div>
+                </div>
+                <div class="tempe1">
+                    <div class="card">
+                        <!-- Custom information -->
+                       
+                        
+                        <!-- Canvas for Chart.js -->
+                        <div>
+
+                            <canvas id="canvas"></canvas>
+                        </div>
+                        
+                        <!-- Custom Axis -->
+                        <div class="axis">
+                          <div class="tick">
+                         <div id="cirr"> <img src=<%='http://openweathermap.org/img/wn/' + fiveDayweather.list[2].weather[0].icon + "@2x.png"%> alt=""></div>
+                            <span class="day-name">Morning</span>
+                          </div>
+                          <div class="tick">
+                          <div id="cirr"> <img src=<%='http://openweathermap.org/img/wn/' + fiveDayweather.list[4].weather[0].icon + "@2x.png"%> alt=""></div>
+                            <span class="day-name">Afternoon</span>
+                          </div>
+                          <div class="tick">
+                           <div id="cirr"> <img src=<%='http://openweathermap.org/img/wn/' + fiveDayweather.list[6].weather[0].icon + "@2x.png"%> alt=""></div>
+                            <span class="day-name">Evening</span>
+                          </div>
+                          <div class="tick">
+                           <div id="cirr"> <img src=<%='http://openweathermap.org/img/wn/' + fiveDayweather.list[8].weather[0].icon + "@2x.png"%> alt=""></div>
+                            <span class="day-name">Night</span>
+                          </div>
+                        </div>
+                      </div>
+                </div>
+            </div>
+        </div>
+       
+        
+        <div id="right">
+            <div id="rtop">
+                <h2> Today</h2>
+                <h4><%=weatherData.name%> , <%=weatherData.sys.country%></h4>
+                <div id="impm1"><h1><%=Math.floor(weatherData.main.temp)%> °C</h1> </div>
+                <div id="line"></div>
+            </div>
+            <div id="rbtm">
+                <div class="btm"><div class="crr"><i class="ri-arrow-up-fill"></i></div> <div id="bl"><h3>Sunrise : <%var sr = new Date(weatherData.sys.sunrise*1000).toLocaleString("en-IN",{timeStyle : "short"})%><%=sr%></h3></div>
+                <div class="crr"><i class="ri-arrow-down-fill"></i></div><div class="ssl" id="cl"><h3>Sunset :  <%var ss = new Date(weatherData.sys.sunset*1000).toLocaleString("en-IN",{timeStyle : "short"})%><%=ss%></h3></div></div>
+                <div class="btm"><div id="pico" class="crr"><img src="../images/kisspng-logo-blue-wind-wave-sea-level-wave-curve-5a8628d85aa543.6860425015187417203713.png" alt=""></i></div> <div id="bl"><h3>Sea level : <%=weatherData.main.sea_level%> Hpa</h3></div>
+                <div id="pico" class="crr"><img src="../images/icons8-earth-element-96.png" alt=""></div><div id="cl"><h3>Ground level : <%=weatherData.main.grnd_level%> Hpa</h3></div></div>
+                <h2 class="topic">Weather Prediction</h2>
+                <!-- <div class="btm"><div id="cirr"><img src="" alt=""></div><div id="bl"><h5>2022-12-24 03:00:00</h5></div><div id="cl"><h5>Cloudy</h5></div><div id="te"><h6>22 C/ 24 C</h6></div></div> -->
+                <div id="loc" class="btm"><div id="cirr"><img src=<%='http://openweathermap.org/img/wn/' + fiveDayweather.list[1].weather[0].icon + "@2x.png"%> alt=""></div><div id="bl"><h5><%var da = new Date(fiveDayweather.list[1].dt_txt).toLocaleString('default', { month: 'long' })%><%=da%> <%var dt = new Date(fiveDayweather.list[1].dt_txt).getUTCDate()%><%=dt%>  <%var fu = new Date(fiveDayweather.list[1].dt_txt).toLocaleString("en-IN",{timeStyle : "short"})%><%=fu%></h5></div><div id="cl"><h5><%=fiveDayweather.list[1].weather[0].description%></h5></div><div class="yes" id="te"><h6><%=Math.floor(fiveDayweather.list[1].main.temp_max)%> °C/ <%=Math.floor(fiveDayweather.list[1].main.temp_min)%> °C</h6></div></div>
+                <div id="loc" class="btm"><div id="cirr"> <img src=<%='http://openweathermap.org/img/wn/' + fiveDayweather.list[3].weather[0].icon + "@2x.png"%> alt=""></div><div id="bl"><h5><%var da = new Date(fiveDayweather.list[3].dt_txt).toLocaleString('default', { month: 'long' })%><%=da%> <%var dt = new Date(fiveDayweather.list[3].dt_txt).getUTCDate()%><%=dt%>  <%var fu = new Date(fiveDayweather.list[3].dt_txt).toLocaleString("en-IN",{timeStyle : "short"})%><%=fu%></h5></div><div id="cl"><h5><%=fiveDayweather.list[3].weather[0].description%></h5></div><div class="yes2" id="te"><h6><%=Math.floor(fiveDayweather.list[3].main.temp_max)%> °C/ <%=Math.floor(fiveDayweather.list[3].main.temp_min)%> °C</h6></div></div>
+                <form action="/prediction">
+
+                  <button id="pred"> <i class="ri-calendar-line"></i> Next 5 Days</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.27.2/axios.min.js" integrity="sha512-odNmoc1XJy5x1TMVMdC7EMs3IVdItLPlCeL5vSUPN2llYKMJ2eByTTAIiiuqLg+GdNr9hF6z81p27DArRFKT7A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.0/Chart.js"></script>
+
+<script>
+  document.querySelector('#autoComplete').addEventListener('dblclick',function(){
+    document.querySelector('#autoS').submit()
+  })
+
+  var secc = document.querySelector('#secc')
+  if ('<%-weatherData.weather[0].main%>' === undefined) {
+    secc.style.backgroundImage = 'url(../images/Default.gif)'
+  }
+  else{
+    secc.style.backgroundImage = 'url(../images/<%-weatherData.weather[0].main%>.gif)'
+  }
+
+  var seccc = document.querySelector('#seccc')
+  if ('<%-fiveDayweather.list[11].weather[0].main%>' === undefined) {
+    seccc.style.backgroundImage = 'url(../images/Default.gif)'
+  }
+  else{
+    seccc.style.backgroundImage = 'url(../images/<%-fiveDayweather.list[11].weather[0].main%>1.gif)'
+  }
+  document.querySelector('#imperial').addEventListener('click',function(){
+    console.log('helo')
+    axios.get('/weather/imperial')
+    .then(function(data){
+      console.log(data.data.fiveDayweatherimperial)
+      console.log(data.data.weatherDataimperial.main.temp)
+      document.querySelector('#impm').innerHTML = `<h1>${Math.floor(data.data.weatherDataimperial.main.temp)} °F</h1>` ;
+      document.querySelector('#impm1').innerHTML = `<h1>${Math.floor(data.data.weatherDataimperial.main.temp)} °F</h1>` ;
+      document.querySelector('#mina').innerHTML = `<h3>${data.data.weatherDataimperial.main.temp_min}°F/${data.data.weatherDataimperial.main.temp_max}°F</h3>`;
+      document.querySelector('#feel').innerHTML = `<h3>${Math.floor(data.data.weatherDataimperial.main.feels_like)}°F</h3>`
+      document.querySelector('.mi').innerHTML = `<h5>${Math.floor(data.data.weatherDataimperial.main.temp_min)}°F</h5>`
+      document.querySelector('.ttr').innerHTML = `<h1>${Math.floor(data.data.fiveDayweatherimperial.list[11].main.temp)} °F</h1>`
+      document.querySelector('.yes').innerHTML = ` <h6>${Math.floor(data.data.fiveDayweatherimperial.list[1].main.temp_max)} °F/${Math.floor(data.data.fiveDayweatherimperial.list[1].main.temp_min)} °F</h6>`
+      document.querySelector('.yes2').innerHTML = ` <h6>${Math.floor(data.data.fiveDayweatherimperial.list[3].main.temp_max)} °F/${Math.floor(data.data.fiveDayweatherimperial.list[3].main.temp_min)} °F</h6>`
+      document.querySelector('.f1').innerHTML = `Temperature : ${Math.floor(data.data.fiveDayweatherimperial.list[1].main.temp)} °F`
+      document.querySelector('.f2').innerHTML = `Temperature : ${Math.floor(data.data.fiveDayweatherimperial.list[3].main.temp)} °F`
+      document.querySelector('.f3').innerHTML = `Temperature : ${Math.floor(data.data.fiveDayweatherimperial.list[5].main.temp)} °F`
+      document.querySelector('.f4').innerHTML = `Temperature : ${Math.floor(data.data.fiveDayweatherimperial.list[7].main.temp)} °F`
+      document.querySelector('.f5').innerHTML = `Temperature : ${Math.floor(data.data.fiveDayweatherimperial.list[9].main.temp)} °F`
+      document.querySelector('.f6').innerHTML = `Temperature : ${Math.floor(data.data.fiveDayweatherimperial.list[11].main.temp)} °F`
+      document.querySelector('.f7').innerHTML = `Temperature : ${Math.floor(data.data.fiveDayweatherimperial.list[13].main.temp)} °F`
+      document.querySelector('.f8').innerHTML = `Temperature : ${Math.floor(data.data.fiveDayweatherimperial.list[15].main.temp)} °F`
+      document.querySelector('.f9').innerHTML = `Temperature : ${Math.floor(data.data.fiveDayweatherimperial.list[17].main.temp)} °F`
+      document.querySelector('.f10').innerHTML = `Temperature : ${Math.floor(data.data.fiveDayweatherimperial.list[19].main.temp)} °F`
+      document.querySelector('.f11').innerHTML = `Temperature : ${Math.floor(data.data.fiveDayweatherimperial.list[21].main.temp)} °F`
+      document.querySelector('.f12').innerHTML = `Temperature : ${Math.floor(data.data.fiveDayweatherimperial.list[23].main.temp)} °F`
+      document.querySelector('.f13').innerHTML = `Temperature : ${Math.floor(data.data.fiveDayweatherimperial.list[25].main.temp)} °F`
+      document.querySelector('.f14').innerHTML = `Temperature : ${Math.floor(data.data.fiveDayweatherimperial.list[27].main.temp)} °F`
+      document.querySelector('.f15').innerHTML = `Temperature : ${Math.floor(data.data.fiveDayweatherimperial.list[29].main.temp)} °F`
+      document.querySelector('.f16').innerHTML = `Temperature : ${Math.floor(data.data.fiveDayweatherimperial.list[31].main.temp)} °F`
+      document.querySelector('.f17').innerHTML = `Temperature : ${Math.floor(data.data.fiveDayweatherimperial.list[33].main.temp)} °F`
+      document.querySelector('.f18').innerHTML = `Temperature : ${Math.floor(data.data.fiveDayweatherimperial.list[35].main.temp)} °F`
+      document.querySelector('.f19').innerHTML = `Temperature : ${Math.floor(data.data.fiveDayweatherimperial.list[37].main.temp)} °F`
+      document.querySelector('.f20').innerHTML = `Temperature : ${Math.floor(data.data.fiveDayweatherimperial.list[39].main.temp)} °F`
+
+    })
+  })
+
+  document.querySelector('#metric').addEventListener('click',function(){
+    window.location.reload()
+    
+  
+  })
+
+  axios.get('/weatherchart')
+  .then(function(data){
+    console.log(data.data.fiveDayweather)
+    var daa1 = Math.floor(data.data.fiveDayweather.list[2].main.temp);
+    var daa2 = Math.floor(data.data.fiveDayweather.list[4].main.temp);
+    var daa3 = Math.floor(data.data.fiveDayweather.list[6].main.temp);
+    var daa4 = Math.floor(data.data.fiveDayweather.list[8].main.temp);
+    var canvas = document.getElementById("canvas");
+
+// Apply multiply blend when drawing datasets
+var multiply = {
+beforeDatasetsDraw: function(chart, options, el) {
+  chart.ctx.globalCompositeOperation = 'multiply';
+},
+afterDatasetsDraw: function(chart, options) {
+  chart.ctx.globalCompositeOperation = 'source-over';
+},
+};
+
+// Gradient color - this week
+// var gradientThisWeek = canvas.getContext('2d').createLinearGradient(0, 0, 0, 150);
+// gradientThisWeek.addColorStop(0, '#5555FF');
+// gradientThisWeek.addColorStop(1, '#9787FF');
+
+
+
+
+var config = {
+  type: 'line',
+  data: {
+      labels: ["Morning", "Afternoon", "Evening", "Night"],
+      datasets: [
+        {
+            label: 'Temperature',
+            data: [daa1, daa2, daa3, daa4],
+            fill: true,
+            borderColor: '#a1a1a1',
+            borderWidth: 3,
+            pointBackgroundColor: 'transparent',
+            pointBorderColor: '#4e4e4e',
+            pointBorderWidth: 3,
+            pointHoverBorderColor: 'rgba(255, 255, 255, 0.2)',
+            pointHoverBorderWidth: 10,
+            lineTension: 0.4,
+        }
+      ]
+  },
+  options: {
+   
+    responsive: true,
+    elements: { 
+      point: {
+        radius: 6,
+        hitRadius: 3, 
+        hoverRadius: 3 
+      } 
+    },
+    legend: {
+      display: false,
+    },
+    tooltips: {
+    
+      displayColors: false,
+      bodyFontSize: 14,
+      callbacks: {
+        label: function(tooltipItems, data) { 
+          return tooltipItems.yLabel + '°C';
+        }
+      }
+    },
+    scales: {
+      xAxes: [{
+          offset:false,
+        display: false,
+        min: 0,
+        max: 100
+      }],
+      yAxes: [{
+        display: false,
+        ticks: {
+          beginAtZero: true,
+        },
+      }],
+    },
+    
+  },
+  plugins: [multiply],
+};
+
+window.chart = new Chart(canvas, config);
+
+  })
+
+//   var canvas = document.getElementById("canvas");
+
+// // Apply multiply blend when drawing datasets
+// var multiply = {
+// beforeDatasetsDraw: function(chart, options, el) {
+//   chart.ctx.globalCompositeOperation = 'multiply';
+// },
+// afterDatasetsDraw: function(chart, options) {
+//   chart.ctx.globalCompositeOperation = 'source-over';
+// },
+// };
+
+// // Gradient color - this week
+// // var gradientThisWeek = canvas.getContext('2d').createLinearGradient(0, 0, 0, 150);
+// // gradientThisWeek.addColorStop(0, '#5555FF');
+// // gradientThisWeek.addColorStop(1, '#9787FF');
+
+
+
+
+// var config = {
+//   type: 'line',
+//   data: {
+//       labels: ["Morning", "Afternoon", "Evening", "Night"],
+//       datasets: [
+//         {
+//             label: 'Temperature',
+//             data: [30, 26, 14, 22],
+//             fill: true,
+//             borderColor: '#a1a1a1',
+//             borderWidth: 5,
+//             pointBackgroundColor: 'transparent',
+//             pointBorderColor: '#4e4e4e',
+//             pointBorderWidth: 3,
+//             pointHoverBorderColor: 'rgba(255, 255, 255, 0.2)',
+//             pointHoverBorderWidth: 10,
+//             lineTension: 0.4,
+//         }
+//       ]
+//   },
+//   options: {
+   
+//     responsive: true,
+//     elements: { 
+//       point: {
+//         radius: 6,
+//         hitRadius: 3, 
+//         hoverRadius: 3 
+//       } 
+//     },
+//     legend: {
+//       display: false,
+//     },
+//     tooltips: {
+    
+//       displayColors: false,
+//       bodyFontSize: 14,
+//       callbacks: {
+//         label: function(tooltipItems, data) { 
+//           return tooltipItems.yLabel + '°C';
+//         }
+//       }
+//     },
+//     scales: {
+//       xAxes: [{
+//           offset:false,
+//         display: false,
+//         min: 0,
+//         max: 100
+//       }],
+//       yAxes: [{
+//         display: false,
+//         ticks: {
+//           beginAtZero: true,
+//         },
+//       }],
+//     },
+    
+//   },
+//   plugins: [multiply],
+// };
+
+// window.chart = new Chart(canvas, config);
+
+
+const toggle = document.getElementById('toggleDark');
+const body = document.querySelector('body');
+const right = document.querySelector('#right');
+
+toggle.addEventListener('click', function(){
+  this.classList.toggle('bi-moon');
+  if(this.classList.toggle('bi-brightness-high-fill')){
+      body.style.background = 'white';
+      body.style.color = 'black';
+      body.style.transition = '2s';
+      right.style.background = '#ededed'
+      // right.style.transition = '2s';
+      document.querySelector('.ico a').style.color = '#000'
+      document.querySelector('.mi').style.background = '#a4a4a4'
+   
+      document.querySelectorAll('.tick span').style.color = '#000'
+      // document.querySelector('.mi').style.transition = '1s'
+
+  }else{
+      body.style.background = '#1c1c1c';
+      body.style.color = 'white';
+      body.style.transition = '2s';
+      right.style.background = '#383838'
+      // right.style.transition = '2s';
+      document.querySelector('.ico a').style.color = '#fff'
+      document.querySelector('.mi').style.background = '#1c1c1c'
+     
+      document.querySelectorAll('.tick span').style.color = 'initial'
+      // document.querySelector('.mi').style.transition = '1s'
+  }
+});
+
+document.querySelector('#autoComplete').addEventListener('input', async function(){
+
+
+var that = this
+// console.log(this.value.charAt(0).toUpperCase())
+
+// console.log(this.value.charAt(0).toUpperCase() + this.value.slice(1))
+if(this.value.trim().length > 0){
+  await axios.get(`/check/${this.value.charAt(0).toUpperCase() + this.value.slice(1)}`)
+  .then(function(data){
+    console.log(data)
+    // console.log(data.data.cityname[0].name.trim())
+    // console.log(data.data.cityname[0].name.trim().length)
+    if(data.data.cityname[0].name.trim().length > 1){
+      document.querySelector('#matches').style.display = 'grid'
+      document.querySelector('#matches').innerHTML = ""
+      data.data.cityname.forEach((elem,i) => { 
+        
+        
+          document.querySelector('#matches').innerHTML += `<div id="match-list"><h4>${elem.name},${elem.country}</h4></div>`
+          
+        
+        // console.log(`a[${index}] = ${elem.name}`);
+        // console.log(elem.name)
+
+        // console.log(elem.country)
+        // document.querySelector('#matches #match-list').innerHTML += `<h4>${elem.name},${elem.country}</h4>` 
+       const matchList = document.querySelectorAll('#match-list')
+       matchList.forEach(function(ele){
+        ele.addEventListener('click',function(dets){
+          // console.log(dets.target.textContent)
+         document.querySelector('#autoComplete').value = `${dets.target.textContent}` ;
+         document.querySelector('#che').click();
+       })
+      })
+      });
+     
+      document.querySelector('#match-list').style.display = " "
+      console.log('done')
+    }
+  
+   
+    // console.log(data)
+    // console.log(data.data.cityname)
+    // console.log(data.data.country)
+  })
+}
+else{
+  var listo = document.querySelectorAll('#match-list')
+     document.querySelector('#matches').style.display = "initial"
+     listo.forEach(eleme => {
+      
+       eleme.style.display = " none "
+     });
+   }
+})
+
+
+
+
+
+
+
+
+</script>
+</html>
+
+<script>
+
+</script>

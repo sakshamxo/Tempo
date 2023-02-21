@@ -1,0 +1,710 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css" />
+    <link rel="stylesheet"href="https://unpkg.com/swiper@8/swiper-bundle.min.css"/>
+    <link rel="stylesheet" href="../stylesheets/style3.css">
+    <title>Document</title>
+</head>
+<body>
+  <div id="main">
+    <div id="nav">
+        <div class="nav1"><div class="lo"><img src="../images/TEMPO (1).gif" alt=""></div></div>
+        <div class="nav2"><div id="metric" class="ico"><i class="ri-celsius-line"></i></div>
+        <div id="imperial" class="ico"><i class="ri-fahrenheit-line"></i></div>
+        <div class="ico"><i class="bi bi-brightness-high-fill" id="toggleDark"></i></div>
+        <div class="nav3"><div class="ico"><a href="javascript:history.back()"><i class="ri-arrow-left-circle-fill"></i></a></div></div>
+       </div>
+    </div>
+    <div id="dis">
+        <div class="cor1">
+             <div class="swiper mySwiper container">
+        <div class="swiper-wrapper content">
+            <div class="swiper-slide card">
+                <div class="<%=fiveDayweather.list[1].weather[0].main%>" id="box1"></div>
+                <div class="cname"><h1><%=weatherData.name%> , <%=weatherData.sys.country%></h1></div>
+                <div class="dati"><h2><%var da = new Date(fiveDayweather.list[1].dt_txt).toLocaleString('default', { month: 'long' })%><%=da%> <%var dt = new Date(fiveDayweather.list[1].dt_txt).getUTCDate()%><%=dt%>  <%var fu = new Date(fiveDayweather.list[1].dt_txt).toLocaleString("en-IN",{timeStyle : "short"})%><%=fu%></h2></div>
+                <div class="desci"><h2><%=fiveDayweather.list[1].weather[0].description%></h2></div>
+                <div id="f1" class="temper"><h1><%=Math.floor(fiveDayweather.list[1].main.temp_max)%>°C/<%=Math.floor(fiveDayweather.list[1].main.temp_min)%>°C</h1></div>
+                <div class="iconn"><img src=<%='http://openweathermap.org/img/wn/' + fiveDayweather.list[1].weather[0].icon + "@2x.png"%> alt=""></div>
+            </div>
+
+            <div class="swiper-slide card">
+              <div class="<%=fiveDayweather.list[3].weather[0].main%>" id="box1"></div>  
+              <div class="cname"><h1><%=weatherData.name%> , <%=weatherData.sys.country%></h1></div>
+              <div class="dati"><h2><%var da = new Date(fiveDayweather.list[3].dt_txt).toLocaleString('default', { month: 'long' })%><%=da%> <%var dt = new Date(fiveDayweather.list[3].dt_txt).getUTCDate()%><%=dt%>  <%var fu = new Date(fiveDayweather.list[3].dt_txt).toLocaleString("en-IN",{timeStyle : "short"})%><%=fu%></h2></div>
+              <div class="desci"><h2><%=fiveDayweather.list[3].weather[0].description%></h2></div>
+              <div id="f2" class="temper"><h1><%=Math.floor(fiveDayweather.list[3].main.temp_max)%>°C/<%=Math.floor(fiveDayweather.list[3].main.temp_min)%>°C</h1></div>
+              <div class="iconn"><img src=<%='http://openweathermap.org/img/wn/' + fiveDayweather.list[3].weather[0].icon + "@2x.png"%> alt=""></div>
+            </div>
+
+            <div class="swiper-slide card">
+                <div class="<%=fiveDayweather.list[5].weather[0].main%>" id="box1"></div>
+                <div class="cname"><h1><%=weatherData.name%> , <%=weatherData.sys.country%></h1></div>
+                <div class="dati"><h2><%var da = new Date(fiveDayweather.list[5].dt_txt).toLocaleString('default', { month: 'long' })%><%=da%> <%var dt = new Date(fiveDayweather.list[5].dt_txt).getUTCDate()%><%=dt%>  <%var fu = new Date(fiveDayweather.list[5].dt_txt).toLocaleString("en-IN",{timeStyle : "short"})%><%=fu%></h2></div>
+                <div class="desci"><h2><%=fiveDayweather.list[5].weather[0].description%></h2></div>
+                <div id="f3" class="temper"><h1><%=Math.floor(fiveDayweather.list[5].main.temp_max)%>°C/<%=Math.floor(fiveDayweather.list[5].main.temp_min)%>°C</h1></div>
+                <div class="iconn"><img src=<%='http://openweathermap.org/img/wn/' + fiveDayweather.list[5].weather[0].icon + "@2x.png"%> alt=""></div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="swiper-button-next"></div>
+    <div class="swiper-button-prev"></div>
+   
+        </div>
+        <div class="cor2">
+            <div class="swiper mySwiper container">
+                <div class="swiper-wrapper content">
+                    <div class="swiper-slide card">
+<div class="<%=fiveDayweather.list[7].weather[0].main%>" id="box1"></div>
+<div class="cname"><h1><%=weatherData.name%> , <%=weatherData.sys.country%></h1></div>
+<div class="dati"><h2><%var da = new Date(fiveDayweather.list[7].dt_txt).toLocaleString('default', { month: 'long' })%><%=da%> <%var dt = new Date(fiveDayweather.list[7].dt_txt).getUTCDate()%><%=dt%>  <%var fu = new Date(fiveDayweather.list[7].dt_txt).toLocaleString("en-IN",{timeStyle: "short"})%><%=fu%></h2></div>
+<div class="desci"><h2><%=fiveDayweather.list[7].weather[0].description%></h2></div>
+<div id="f4" class="temper"><h1><%=Math.floor(fiveDayweather.list[7].main.temp_max)%>°C/<%=Math.floor(fiveDayweather.list[7].main.temp_min)%>°C</h1></div>
+<div class="iconn"> <img src=<%='http://openweathermap.org/img/wn/' + fiveDayweather.list[7].weather[0].icon + "@2x.png"%> alt=""></div>
+                    </div>
+                    <div class="swiper-slide card">
+                        <div class="<%=fiveDayweather.list[9].weather[0].main%>" id="box1"></div>
+                        <div class="cname"><h1><%=weatherData.name%> , <%=weatherData.sys.country%></h1></div>
+                        <div class="dati"><h2><%var da = new Date(fiveDayweather.list[9].dt_txt).toLocaleString('default', { month: 'long' })%><%=da%> <%var dt = new Date(fiveDayweather.list[9].dt_txt).getUTCDate()%><%=dt%>  <%var fu = new Date(fiveDayweather.list[9].dt_txt).toLocaleString("en-IN",{timeStyle: "short"})%><%=fu%></h2></div>
+                        <div class="desci"><h2><%=fiveDayweather.list[9].weather[0].description%></h2></div>
+                        <div id="f5" class="temper"><h1><%=Math.floor(fiveDayweather.list[9].main.temp_max)%>°C/<%=Math.floor(fiveDayweather.list[9].main.temp_min)%>°C</h1></div>
+                        <div class="iconn"> <img src=<%='http://openweathermap.org/img/wn/' + fiveDayweather.list[9].weather[0].icon + "@2x.png"%> alt=""></div>
+
+                    </div>
+        
+                    <div class="swiper-slide card">
+<div class="<%=fiveDayweather.list[11].weather[0].main%>" id="box1"></div>
+<div class="cname"><h1><%=weatherData.name%> , <%=weatherData.sys.country%></h1></div>
+<div class="dati"><h2><%var da = new Date(fiveDayweather.list[11].dt_txt).toLocaleString('default', { month: 'long' })%><%=da%> <%var dt = new Date(fiveDayweather.list[11].dt_txt).getUTCDate()%><%=dt%>  <%var fu = new Date(fiveDayweather.list[11].dt_txt).toLocaleString("en-IN",{timeStyle: "short"})%><%=fu%></h2></div>
+<div class="desci"><h2><%=fiveDayweather.list[11].weather[0].description%></h2></div>
+<div id="f6" class="temper"><h1><%=Math.floor(fiveDayweather.list[11].main.temp_max)%>°C/<%=Math.floor(fiveDayweather.list[11].main.temp_min)%>°C</h1></div>
+<div class="iconn">  <img src=<%='http://openweathermap.org/img/wn/' + fiveDayweather.list[11].weather[0].icon + "@2x.png"%> alt=""></div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+           
+        </div>
+        <div class="cor3">  <div class="swiper mySwiper container">
+                <div class="swiper-wrapper content">
+                    <div class="swiper-slide card">
+                     <div class="<%=fiveDayweather.list[19].weather[0].main%>" id="box1"></div>
+                     <div class="cname"><h1><%=weatherData.name%> , <%=weatherData.sys.country%></h1></div>
+                     <div class="dati"><h2><%var da = new Date(fiveDayweather.list[19].dt_txt).toLocaleString('default', { month: 'long' })%><%=da%> <%var dt = new Date(fiveDayweather.list[19].dt_txt).getUTCDate()%><%=dt%>  <%var fu = new Date(fiveDayweather.list[19].dt_txt).toLocaleString("en-IN",{timeStyle: "short"})%><%=fu%></h2></div>
+                     <div class="desci"><h2><%=fiveDayweather.list[19].weather[0].description%></h2></div>
+                     <div id="f10" class="temper"><h1><%=Math.floor(fiveDayweather.list[19].main.temp_max)%>°C/<%=Math.floor(fiveDayweather.list[19].main.temp_min)%>°C</h1></div>
+                     <div class="iconn"> <img src=<%='http://openweathermap.org/img/wn/' + fiveDayweather.list[19].weather[0].icon + "@2x.png"%> alt=""></div>
+                    </div>
+        
+                    <div class="swiper-slide card">
+                       <div class="<%=fiveDayweather.list[21].weather[0].main%>" id="box1"></div>
+                       <div class="cname"><h1><%=weatherData.name%> , <%=weatherData.sys.country%></h1></div>
+                       <div class="dati"><h2><%var da = new Date(fiveDayweather.list[21].dt_txt).toLocaleString('default', { month: 'long' })%><%=da%> <%var dt = new Date(fiveDayweather.list[21].dt_txt).getUTCDate()%><%=dt%>  <%var fu = new Date(fiveDayweather.list[21].dt_txt).toLocaleString("en-IN",{timeStyle: "short"})%><%=fu%></h2></div>
+                       <div class="desci"><h2><%=fiveDayweather.list[21].weather[0].description%></h2></div>
+                       <div id="f11" class="temper"><h1><%=Math.floor(fiveDayweather.list[21].main.temp_max)%>°C/<%=Math.floor(fiveDayweather.list[21].main.temp_min)%>°C</h1></div>
+                       <div class="iconn"> <img src=<%='http://openweathermap.org/img/wn/' + fiveDayweather.list[21].weather[0].icon + "@2x.png"%> alt=""></div>
+                    </div>
+        
+                    <div class="swiper-slide card">
+                      <div class="<%=fiveDayweather.list[23].weather[0].main%>" id="box1"></div> 
+                      <div class="cname"><h1><%=weatherData.name%> , <%=weatherData.sys.country%></h1></div>
+                      <div class="dati"><h2><%var da = new Date(fiveDayweather.list[23].dt_txt).toLocaleString('default', { month: 'long' })%><%=da%> <%var dt = new Date(fiveDayweather.list[23].dt_txt).getUTCDate()%><%=dt%>  <%var fu = new Date(fiveDayweather.list[23].dt_txt).toLocaleString("en-IN",{timeStyle: "short"})%><%=fu%></h2></div>
+                      <div class="desci"><h2><%=fiveDayweather.list[23].weather[0].description%></h2></div>
+                      <div id="f12" class="temper"><h1><%=Math.floor(fiveDayweather.list[23].main.temp_max)%>°C/<%=Math.floor(fiveDayweather.list[23].main.temp_min)%>°C</h1></div>
+                      <div class="iconn"><img src=<%='http://openweathermap.org/img/wn/' + fiveDayweather.list[23].weather[0].icon + "@2x.png"%> alt=""></div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+           </div>
+        <div class="cor4">  <div class="swiper mySwiper container">
+                <div class="swiper-wrapper content">
+                    <div class="swiper-slide card">
+                      <div class="<%=fiveDayweather.list[31].weather[0].main%>" id="box1"></div> 
+                      <div class="cname"><h1><%=weatherData.name%> , <%=weatherData.sys.country%></h1></div>
+                      <div class="dati"><h2><%var da = new Date(fiveDayweather.list[31].dt_txt).toLocaleString('default', { month: 'long' })%><%=da%> <%var dt = new Date(fiveDayweather.list[31].dt_txt).getUTCDate()%><%=dt%>  <%var fu = new Date(fiveDayweather.list[31].dt_txt).toLocaleString("en-IN",{timeStyle: "short"})%><%=fu%></h2></div>
+                      <div class="desci"><h2><%=fiveDayweather.list[31].weather[0].description%></h2></div>
+                      <div id="f16" class="temper"><h1><%=Math.floor(fiveDayweather.list[31].main.temp_max)%>°C/<%=Math.floor(fiveDayweather.list[31].main.temp_min)%>°C</h1></div>
+                      <div class="iconn"><img src=<%='http://openweathermap.org/img/wn/' + fiveDayweather.list[31].weather[0].icon + "@2x.png"%> alt=""></div>
+                    </div>
+        
+                    <div class="swiper-slide card">
+                       <div class="<%=fiveDayweather.list[33].weather[0].main%>" id="box1"></div>
+                       <div class="cname"><h1><%=weatherData.name%> , <%=weatherData.sys.country%></h1></div>
+                       <div class="dati"><h2><%var da = new Date(fiveDayweather.list[33].dt_txt).toLocaleString('default', { month: 'long' })%><%=da%> <%var dt = new Date(fiveDayweather.list[33].dt_txt).getUTCDate()%><%=dt%>  <%var fu = new Date(fiveDayweather.list[33].dt_txt).toLocaleString("en-IN",{timeStyle: "short"})%><%=fu%></h2></div>
+                       <div class="desci"><h2><%=fiveDayweather.list[33].weather[0].description%></h2></div>
+                       <div id="f17" class="temper"><h1><%=Math.floor(fiveDayweather.list[33].main.temp_max)%>°C/<%=Math.floor(fiveDayweather.list[33].main.temp_min)%>°C</h1></div>
+                       <div class="iconn"><img src=<%='http://openweathermap.org/img/wn/' + fiveDayweather.list[33].weather[0].icon + "@2x.png"%> alt=""></div>
+                    </div>
+        
+                    <div class="swiper-slide card">
+                    <div class="<%=fiveDayweather.list[35].weather[0].main%>" id="box1"></div> 
+                    <div class="cname"><h1><%=weatherData.name%> , <%=weatherData.sys.country%></h1></div>
+                    <div class="dati"><h2><%var da = new Date(fiveDayweather.list[35].dt_txt).toLocaleString('default', { month: 'long' })%><%=da%> <%var dt = new Date(fiveDayweather.list[35].dt_txt).getUTCDate()%><%=dt%>  <%var fu = new Date(fiveDayweather.list[35].dt_txt).toLocaleString("en-IN",{timeStyle: "short"})%><%=fu%></h2></div>
+                    <div class="desci"><h2><%=fiveDayweather.list[35].weather[0].description%></h2></div>
+                    <div id="f18" class="temper"><h1><%=Math.floor(fiveDayweather.list[35].main.temp_max)%>°C/<%=Math.floor(fiveDayweather.list[35].main.temp_min)%>°C</h1></div>
+                    <div class="iconn"><img src=<%='http://openweathermap.org/img/wn/' + fiveDayweather.list[35].weather[0].icon + "@2x.png"%> alt=""></div>   
+                    </div>
+                    <div class="swiper-slide card">
+                        <div class="<%=fiveDayweather.list[37].weather[0].main%>" id="box1"></div>
+                        <div class="cname"><h1><%=weatherData.name%> , <%=weatherData.sys.country%></h1></div>
+                        <div class="dati"><h2><%var da = new Date(fiveDayweather.list[37].dt_txt).toLocaleString('default', { month: 'long' })%><%=da%> <%var dt = new Date(fiveDayweather.list[37].dt_txt).getUTCDate()%><%=dt%>  <%var fu = new Date(fiveDayweather.list[37].dt_txt).toLocaleString("en-IN",{timeStyle: "short"})%><%=fu%></h2></div>
+                        <div class="desci"><h2><%=fiveDayweather.list[37].weather[0].description%></h2></div>
+                        <div id="f19" class="temper"><h1><%=Math.floor(fiveDayweather.list[37].main.temp_max)%>°C/<%=Math.floor(fiveDayweather.list[37].main.temp_min)%>°C</h1></div>
+                        <div class="iconn"> <img src=<%='http://openweathermap.org/img/wn/' + fiveDayweather.list[37].weather[0].icon + "@2x.png"%> alt=""></div>
+                       </div>
+                       <div class="swiper-slide card">
+                        <div class="<%=fiveDayweather.list[39].weather[0].main%>" id="box1"></div>
+                        <div class="cname"><h1><%=weatherData.name%> , <%=weatherData.sys.country%></h1></div>
+                        <div class="dati"><h2><%var da = new Date(fiveDayweather.list[39].dt_txt).toLocaleString('default', { month: 'long' })%><%=da%> <%var dt = new Date(fiveDayweather.list[39].dt_txt).getUTCDate()%><%=dt%>  <%var fu = new Date(fiveDayweather.list[39].dt_txt).toLocaleString("en-IN",{timeStyle: "short"})%><%=fu%></h2></div>
+                        <div class="desci"><h2><%=fiveDayweather.list[39].weather[0].description%></h2></div>
+                        <div id="f20" class="temper"><h1><%=Math.floor(fiveDayweather.list[39].main.temp_max)%>°C/<%=Math.floor(fiveDayweather.list[39].main.temp_min)%>°C</h1></div>
+                        <div class="iconn"><img src=<%='http://openweathermap.org/img/wn/' + fiveDayweather.list[39].weather[0].icon + "@2x.png"%> alt=""></div>
+                       </div>
+                </div>
+            </div>
+            
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+           </div>
+        <div class="cor5">  <div class="swiper mySwiper container">
+                <div class="swiper-wrapper content">
+                    <div class="swiper-slide card">
+                      <div class="<%=fiveDayweather.list[25].weather[0].main%>" id="box1"></div> 
+                      <div class="cname"><h1><%=weatherData.name%> , <%=weatherData.sys.country%></h1></div>
+                      <div class="dati"><h2><%var da = new Date(fiveDayweather.list[25].dt_txt).toLocaleString('default', { month: 'long' })%><%=da%> <%var dt = new Date(fiveDayweather.list[25].dt_txt).getUTCDate()%><%=dt%>  <%var fu = new Date(fiveDayweather.list[25].dt_txt).toLocaleString("en-IN",{timeStyle: "short"})%><%=fu%></h2></div>
+                      <div class="desci"><h2><%=fiveDayweather.list[25].weather[0].description%></h2></div>
+                      <div id="f13" class="temper"><h1><%=Math.floor(fiveDayweather.list[25].main.temp_max)%>°C/<%=Math.floor(fiveDayweather.list[25].main.temp_min)%>°C</h1></div>
+                      <div class="iconn"><img src=<%='http://openweathermap.org/img/wn/' + fiveDayweather.list[25].weather[0].icon + "@2x.png"%> alt=""></div> 
+                    </div>
+        
+                    <div class="swiper-slide card">
+                     <div class="<%=fiveDayweather.list[27].weather[0].main%>" id="box1"></div>
+                     <div class="cname"><h1><%=weatherData.name%> , <%=weatherData.sys.country%></h1></div>
+                     <div class="dati"><h2><%var da = new Date(fiveDayweather.list[27].dt_txt).toLocaleString('default', { month: 'long' })%><%=da%> <%var dt = new Date(fiveDayweather.list[27].dt_txt).getUTCDate()%><%=dt%>  <%var fu = new Date(fiveDayweather.list[27].dt_txt).toLocaleString("en-IN",{timeStyle: "short"})%><%=fu%></h2></div>
+                     <div class="desci"><h2><%=fiveDayweather.list[27].weather[0].description%></h2></div>
+                     <div id="f14" class="temper"><h1><%=Math.floor(fiveDayweather.list[27].main.temp_max)%>°C/<%=Math.floor(fiveDayweather.list[27].main.temp_min)%>°C</h1></div>
+                     <div class="iconn"> <img src=<%='http://openweathermap.org/img/wn/' + fiveDayweather.list[27].weather[0].icon + "@2x.png"%> alt=""></div>
+                    </div>
+        
+                    <div class="swiper-slide card">
+                    <div class="<%=fiveDayweather.list[29].weather[0].main%>" id="box1"></div> 
+                    <div class="cname"><h1><%=weatherData.name%> , <%=weatherData.sys.country%></h1></div>
+                    <div class="dati"><h2><%var da = new Date(fiveDayweather.list[29].dt_txt).toLocaleString('default', { month: 'long' })%><%=da%> <%var dt = new Date(fiveDayweather.list[29].dt_txt).getUTCDate()%><%=dt%>  <%var fu = new Date(fiveDayweather.list[29].dt_txt).toLocaleString("en-IN",{timeStyle: "short"})%><%=fu%></h2></div>
+                    <div class="desci"><h2><%=fiveDayweather.list[29].weather[0].description%></h2></div>
+                    <div id="f15" class="temper"><h1><%=Math.floor(fiveDayweather.list[29].main.temp_max)%>°C/<%=Math.floor(fiveDayweather.list[29].main.temp_min)%>°C</h1></div>
+                    <div class="iconn"><img src=<%='http://openweathermap.org/img/wn/' + fiveDayweather.list[29].weather[0].icon + "@2x.png"%> alt=""></div>  
+                    </div>
+                </div>
+            </div>
+            
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+           </div>
+        <div class="cor6">  <div class="swiper mySwiper container">
+                <div class="swiper-wrapper content">
+                    <div class="swiper-slide card">
+                      <div class="<%=fiveDayweather.list[13].weather[0].main%>" id="box1"></div> 
+                      <div class="cname"><h1><%=weatherData.name%> , <%=weatherData.sys.country%></h1></div>
+                      <div class="dati"><h2><%var da = new Date(fiveDayweather.list[13].dt_txt).toLocaleString('default', { month: 'long' })%><%=da%> <%var dt = new Date(fiveDayweather.list[13].dt_txt).getUTCDate()%><%=dt%>  <%var fu = new Date(fiveDayweather.list[13].dt_txt).toLocaleString("en-IN",{timeStyle: "short"})%><%=fu%></h2></div>
+                      <div class="desci"><h2><%=fiveDayweather.list[13].weather[0].description%></h2></div>
+                      <div id="f7" class="temper"><h1><%=Math.floor(fiveDayweather.list[13].main.temp_max)%>°C/<%=Math.floor(fiveDayweather.list[13].main.temp_min)%>°C</h1></div>
+                      <div class="iconn"><img src=<%='http://openweathermap.org/img/wn/' + fiveDayweather.list[13].weather[0].icon + "@2x.png"%> alt=""></div>
+                    </div>
+        
+                    <div class="swiper-slide card">
+                     <div class="<%=fiveDayweather.list[15].weather[0].main%>" id="box1"></div>  
+                     <div class="cname"><h1><%=weatherData.name%> , <%=weatherData.sys.country%></h1></div>
+                     <div class="dati"><h2><%var da = new Date(fiveDayweather.list[15].dt_txt).toLocaleString('default', { month: 'long' })%><%=da%> <%var dt = new Date(fiveDayweather.list[15].dt_txt).getUTCDate()%><%=dt%>  <%var fu = new Date(fiveDayweather.list[15].dt_txt).toLocaleString("en-IN",{timeStyle: "short"})%><%=fu%></h2></div>
+                     <div class="desci"><h2><%=fiveDayweather.list[15].weather[0].description%></h2></div>
+                     <div id="f8" class="temper"><h1><%=Math.floor(fiveDayweather.list[15].main.temp_max)%>°C/<%=Math.floor(fiveDayweather.list[15].main.temp_min)%>°C</h1></div>
+                     <div class="iconn"> <img src=<%='http://openweathermap.org/img/wn/' + fiveDayweather.list[15].weather[0].icon + "@2x.png"%> alt=""></div>
+                    </div>
+        
+                    <div class="swiper-slide card">
+                     <div class="<%=fiveDayweather.list[17].weather[0].main%>" id="box1"></div>
+                     <div class="cname"><h1><%=weatherData.name%> , <%=weatherData.sys.country%></h1></div>
+                     <div class="dati"><h2><%var da = new Date(fiveDayweather.list[17].dt_txt).toLocaleString('default', { month: 'long' })%><%=da%> <%var dt = new Date(fiveDayweather.list[17].dt_txt).getUTCDate()%><%=dt%>  <%var fu = new Date(fiveDayweather.list[17].dt_txt).toLocaleString("en-IN",{timeStyle: "short"})%><%=fu%></h2></div>
+                     <div class="desci"><h2><%=fiveDayweather.list[17].weather[0].description%></h2></div>
+                     <div id="f9" class="temper"><h1><%=Math.floor(fiveDayweather.list[17].main.temp_max)%>°C/<%=Math.floor(fiveDayweather.list[17].main.temp_min)%>°C</h1></div>
+                     <div class="iconn"><img src=<%='http://openweathermap.org/img/wn/' + fiveDayweather.list[17].weather[0].icon + "@2x.png"%> alt=""></div>
+                    </div>
+                   
+                </div>
+            </div>
+            
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+           </div>
+
+    </div>
+<!-- <div id="cards">
+
+    <div class="swiper mySwiper container">
+        <div class="swiper-wrapper content">
+            <div class="swiper-slide card">
+                <div class="<%=fiveDayweather.list[3].weather[0].main%>" id="box1"></div>
+                <div class="card-content">
+                    <div class="image">
+                        <img src="https://img.freepik.com/free-photo/bohemian-man-with-his-arms-crossed_1368-3542.jpg?size=626&ext=jpg&uid=R70460828&ga=GA1.2.1826433234.1647754373" alt="">
+                    </div>
+                    <div class="media-icons">
+                        <i class="fab fa-facebook"></i>
+                        <i class="fab fa-twitter"></i>
+                        <i class="fab fa-github"></i>
+                    </div>
+                    <div class="name-profession">
+                        <span class="name">Andrew James</span>
+                        <span class="profession">Graphic Designer</span>
+                    </div>
+                    <div class="rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <div class="about">
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi nobis sequi, nam tenetur magni.</p>
+                    </div>
+                    <div class="button b1">
+                        <button class="aboutMe">About Me</button>
+                        <button class="hireMe">Hire Me</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="swiper-slide card">
+                <div class="box2"></div>
+                <div class="card-content">
+                    <div class="image">
+                        <img src="https://img.freepik.com/free-photo/bohemian-man-with-his-arms-crossed_1368-3542.jpg?size=626&ext=jpg&uid=R70460828&ga=GA1.2.1826433234.1647754373" alt="">
+                    </div>
+                    <div class="media-icons">
+                        <i class="fab fa-facebook"></i>
+                        <i class="fab fa-twitter"></i>
+                        <i class="fab fa-github"></i>
+                    </div>
+                    <div class="name-profession">
+                        <span class="name">Andrew James</span>
+                        <span class="profession">Graphic Designer</span>
+                    </div>
+                    <div class="rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="far fa-star"></i>
+                    </div>
+                    <div class="about">
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi nobis sequi, nam tenetur magni.</p>
+                    </div>
+                    <div class="button b2">
+                        <button class="aboutMe">About Me</button>
+                        <button class="hireMe">Hire Me</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="swiper-slide card">
+                <div class="box3"></div>
+                <div class="card-content">
+                    <div class="image">
+                        <img src="https://img.freepik.com/free-photo/bohemian-man-with-his-arms-crossed_1368-3542.jpg?size=626&ext=jpg&uid=R70460828&ga=GA1.2.1826433234.1647754373" alt="">
+                    </div>
+                    <div class="media-icons">
+                        <i class="fab fa-facebook"></i>
+                        <i class="fab fa-twitter"></i>
+                        <i class="fab fa-github"></i>
+                    </div>
+                    <div class="name-profession">
+                        <span class="name">Andrew James</span>
+                        <span class="profession">Graphic Designer</span>
+                    </div>
+                    <div class="rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="far fa-star"></i>
+                        <i class="far fa-star"></i>
+                    </div>
+                    <div class="about">
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi nobis sequi, nam tenetur magni.</p>
+                    </div>
+                    <div class="button b3">
+                        <button class="aboutMe">About Me</button>
+                        <button class="hireMe">Hire Me</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="swiper-button-next"></div>
+    <div class="swiper-button-prev"></div>
+   
+    <div class="swiper mySwiper container">
+        <div class="swiper-wrapper content">
+            <div class="swiper-slide card">
+                <div class="box1"></div>
+                <div class="card-content">
+                    <div class="image">
+                        <img src="https://img.freepik.com/free-photo/bohemian-man-with-his-arms-crossed_1368-3542.jpg?size=626&ext=jpg&uid=R70460828&ga=GA1.2.1826433234.1647754373" alt="">
+                    </div>
+                    <div class="media-icons">
+                        <i class="fab fa-facebook"></i>
+                        <i class="fab fa-twitter"></i>
+                        <i class="fab fa-github"></i>
+                    </div>
+                    <div class="name-profession">
+                        <span class="name">Andrew James</span>
+                        <span class="profession">Graphic Designer</span>
+                    </div>
+                    <div class="rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <div class="about">
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi nobis sequi, nam tenetur magni.</p>
+                    </div>
+                    <div class="button b1">
+                        <button class="aboutMe">About Me</button>
+                        <button class="hireMe">Hire Me</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="swiper-slide card">
+                <div class="box2"></div>
+                <div class="card-content">
+                    <div class="image">
+                        <img src="https://img.freepik.com/free-photo/bohemian-man-with-his-arms-crossed_1368-3542.jpg?size=626&ext=jpg&uid=R70460828&ga=GA1.2.1826433234.1647754373" alt="">
+                    </div>
+                    <div class="media-icons">
+                        <i class="fab fa-facebook"></i>
+                        <i class="fab fa-twitter"></i>
+                        <i class="fab fa-github"></i>
+                    </div>
+                    <div class="name-profession">
+                        <span class="name">Andrew James</span>
+                        <span class="profession">Graphic Designer</span>
+                    </div>
+                    <div class="rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="far fa-star"></i>
+                    </div>
+                    <div class="about">
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi nobis sequi, nam tenetur magni.</p>
+                    </div>
+                    <div class="button b2">
+                        <button class="aboutMe">About Me</button>
+                        <button class="hireMe">Hire Me</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="swiper-slide card">
+                <div class="box3"></div>
+                <div class="card-content">
+                    <div class="image">
+                        <img src="https://img.freepik.com/free-photo/bohemian-man-with-his-arms-crossed_1368-3542.jpg?size=626&ext=jpg&uid=R70460828&ga=GA1.2.1826433234.1647754373" alt="">
+                    </div>
+                    <div class="media-icons">
+                        <i class="fab fa-facebook"></i>
+                        <i class="fab fa-twitter"></i>
+                        <i class="fab fa-github"></i>
+                    </div>
+                    <div class="name-profession">
+                        <span class="name">Andrew James</span>
+                        <span class="profession">Graphic Designer</span>
+                    </div>
+                    <div class="rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="far fa-star"></i>
+                        <i class="far fa-star"></i>
+                    </div>
+                    <div class="about">
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi nobis sequi, nam tenetur magni.</p>
+                    </div>
+                    <div class="button b3">
+                        <button class="aboutMe">About Me</button>
+                        <button class="hireMe">Hire Me</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="swiper-button-next"></div>
+    <div class="swiper-button-prev"></div>
+   
+
+</div> -->
+
+
+
+  </div>  
+</body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.27.2/axios.min.js" integrity="sha512-odNmoc1XJy5x1TMVMdC7EMs3IVdItLPlCeL5vSUPN2llYKMJ2eByTTAIiiuqLg+GdNr9hF6z81p27DArRFKT7A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
+<script>
+
+const toggle = document.getElementById('toggleDark');
+const body = document.querySelector('body');
+const nav = document.querySelector('#nav');
+const elements = document.getElementsByClassName('swiper')
+
+toggle.addEventListener('click', function(){
+  this.classList.toggle('bi-moon');
+  if(this.classList.toggle('bi-brightness-high-fill')){
+      body.style.background = 'white';
+      body.style.color = 'black';
+      body.style.transition = '2s';
+      nav.style.background = '#ededed'
+      for (const element of elements) {
+ 
+          element.style.background = '#ededed'
+}
+      // right.style.transition = '2s';
+      document.querySelector('.ico a').style.color = '#000'
+      document.querySelector('.mi').style.background = '#a4a4a4'
+   
+      document.querySelectorAll('.tick span').style.color = '#000'
+      // document.querySelector('.mi').style.transition = '1s'
+
+  }else{
+      body.style.background = '#1c1c1c';
+      body.style.color = 'white';
+      body.style.transition = '2s';
+      nav.style.background = '#383838'
+      for (const element of elements) {
+ 
+          element.style.background = '#646464'
+}
+      // right.style.transition = '2s';
+      document.querySelector('.ico a').style.color = '#fff'
+    //   document.querySelector('.mi').style.background = '#1c1c1c'
+     
+     
+      // document.querySelector('.mi').style.transition = '1s'
+  }
+});
+
+
+<!-- initializing swiper slider -->
+
+    var swiper = new Swiper(".mySwiper", {
+      slidesPerView: 1,
+      spaceBetween: 30,
+      grabCursor: true,
+    //   autoplay: {
+    //       delay: 7500,
+    //       disableOnInteraction: false,
+    //       pauseOnMouseEnter: true,
+    //     },
+      slidesPerGroup: 1,
+      loop: false,
+      loopFillGroupWithBlank: false,
+    //   pagination: {
+    //     el: ".swiper-pagination",
+    //     clickable: true,
+    //   },
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
+    });
+
+// var seccc = document.querySelectorAll('.box1')
+
+// seccc.forEach(elem => {
+
+//   if ('<%-fiveDayweather.list[1].weather[0].main%>' === undefined) {
+//     elem.style.backgroundImage = 'url(../images/Default.gif)'
+//   }
+//   else{
+//     elem.style.backgroundImage = 'url(../images/<%-fiveDayweather.list[1].weather[0].main%>1.gif)'
+//   }
+
+//   if ('<%-fiveDayweather.list[3].weather[0].main%>' === undefined) {
+//     elem.style.backgroundImage = 'url(../images/Default.gif)'
+//   }
+//   else{
+//     elem.style.backgroundImage = 'url(../images/<%-fiveDayweather.list[3].weather[0].main%>1.gif)'
+//   }
+//   if ('<%-fiveDayweather.list[3].weather[0].main%>' === undefined) {
+//     elem.style.backgroundImage = 'url(../images/Default.gif)'
+//   }
+//   else{
+//     elem.style.backgroundImage = 'url(../images/<%-fiveDayweather.list[3].weather[0].main%>1.gif)'
+//   }
+//   if ('<%-fiveDayweather.list[5].weather[0].main%>' === undefined) {
+//     elem.style.backgroundImage = 'url(../images/Default.gif)'
+//   }
+//   else{
+//     elem.style.backgroundImage = 'url(../images/<%-fiveDayweather.list[5].weather[0].main%>1.gif)'
+//   }
+//   if ('<%-fiveDayweather.list[7].weather[0].main%>' === undefined) {
+//     elem.style.backgroundImage = 'url(../images/Default.gif)'
+//   }
+//   else{
+//     elem.style.backgroundImage = 'url(../images/<%-fiveDayweather.list[7].weather[0].main%>1.gif)'
+//   }
+//   if ('<%-fiveDayweather.list[9].weather[0].main%>' === undefined) {
+//     elem.style.backgroundImage = 'url(../images/Default.gif)'
+//   }
+//   else{
+//     elem.style.backgroundImage = 'url(../images/<%-fiveDayweather.list[9].weather[0].main%>1.gif)'
+//   }
+//   if ('<%-fiveDayweather.list[11].weather[0].main%>' === undefined) {
+//     elem.style.backgroundImage = 'url(../images/Default.gif)'
+//   }
+//   else{
+//     elem.style.backgroundImage = 'url(../images/<%-fiveDayweather.list[11].weather[0].main%>1.gif)'
+//   } if ('<%-fiveDayweather.list[13].weather[0].main%>' === undefined) {
+//     elem.style.backgroundImage = 'url(../images/Default.gif)'
+//   }
+//   else{
+//     elem.style.backgroundImage = 'url(../images/<%-fiveDayweather.list[13].weather[0].main%>1.gif)'
+//   }
+//   if ('<%-fiveDayweather.list[15].weather[0].main%>' === undefined) {
+//     elem.style.backgroundImage = 'url(../images/Default.gif)'
+//   }
+//   else{
+//     elem.style.backgroundImage = 'url(../images/<%-fiveDayweather.list[15].weather[0].main%>1.gif)'
+//   }
+//   if ('<%-fiveDayweather.list[17].weather[0].main%>' === undefined) {
+//     elem.style.backgroundImage = 'url(../images/Default.gif)'
+//   }
+//   else{
+//     elem.style.backgroundImage = 'url(../images/<%-fiveDayweather.list[17].weather[0].main%>1.gif)'
+//   }
+//   if ('<%-fiveDayweather.list[19].weather[0].main%>' === undefined) {
+//     elem.style.backgroundImage = 'url(../images/Default.gif)'
+//   }
+//   else{
+//     elem.style.backgroundImage = 'url(../images/<%-fiveDayweather.list[19].weather[0].main%>1.gif)'
+//   }
+//   if ('<%-fiveDayweather.list[21].weather[0].main%>' === undefined) {
+//     elem.style.backgroundImage = 'url(../images/Default.gif)'
+//   }
+//   else{
+//     elem.style.backgroundImage = 'url(../images/<%-fiveDayweather.list[21].weather[0].main%>1.gif)'
+//   }
+//   if ('<%-fiveDayweather.list[23].weather[0].main%>' === undefined) {
+//     elem.style.backgroundImage = 'url(../images/Default.gif)'
+//   }
+//   else{
+//     elem.style.backgroundImage = 'url(../images/<%-fiveDayweather.list[23].weather[0].main%>1.gif)'
+//   }
+//   if ('<%-fiveDayweather.list[25].weather[0].main%>' === undefined) {
+//     elem.style.backgroundImage = 'url(../images/Default.gif)'
+//   }
+//   else{
+//     elem.style.backgroundImage = 'url(../images/<%-fiveDayweather.list[25].weather[0].main%>1.gif)'
+//   }
+//   if ('<%-fiveDayweather.list[27].weather[0].main%>' === undefined) {
+//     elem.style.backgroundImage = 'url(../images/Default.gif)'
+//   }
+//   else{
+//     elem.style.backgroundImage = 'url(../images/<%-fiveDayweather.list[27].weather[0].main%>1.gif)'
+//   }
+//   if ('<%-fiveDayweather.list[29].weather[0].main%>' === undefined) {
+//     elem.style.backgroundImage = 'url(../images/Default.gif)'
+//   }
+//   else{
+//     elem.style.backgroundImage = 'url(../images/<%-fiveDayweather.list[29].weather[0].main%>1.gif)'
+//   }
+
+//   if ('<%-fiveDayweather.list[31].weather[0].main%>' === undefined) {
+//     elem.style.backgroundImage = 'url(../images/Default.gif)'
+//   }
+//   else{
+//     elem.style.backgroundImage = 'url(../images/<%-fiveDayweather.list[31].weather[0].main%>1.gif)'
+//   } if ('<%-fiveDayweather.list[33].weather[0].main%>' === undefined) {
+//     elem.style.backgroundImage = 'url(../images/Default.gif)'
+//   }
+//   else{
+//     elem.style.backgroundImage = 'url(../images/<%-fiveDayweather.list[33].weather[0].main%>1.gif)'
+//   }
+//   if ('<%-fiveDayweather.list[35].weather[0].main%>' === undefined) {
+//     elem.style.backgroundImage = 'url(../images/Default.gif)'
+//   }
+//   else{
+//     elem.style.backgroundImage = 'url(../images/<%-fiveDayweather.list[35].weather[0].main%>1.gif)'
+//   }
+//   if ('<%-fiveDayweather.list[37].weather[0].main%>' === undefined) {
+//     elem.style.backgroundImage = 'url(../images/Default.gif)'
+//   }
+//   else{
+//     elem.style.backgroundImage = 'url(../images/<%-fiveDayweather.list[37].weather[0].main%>1.gif)'
+//   }
+//   if ('<%-fiveDayweather.list[39].weather[0].main%>' === undefined) {
+//     elem.style.backgroundImage = 'url(../images/Default.gif)'
+//   }
+//   else{
+//     elem.style.backgroundImage = 'url(../images/<%-fiveDayweather.list[39].weather[0].main%>1.gif)'
+//   }
+
+
+// });
+
+document.querySelector('#metric').addEventListener('click',function(){
+    window.location.reload()
+    
+  
+  })
+ 
+document.querySelector('#imperial').addEventListener('click',function(){
+    console.log('helo')
+    axios.get('/weather/imperial')
+    .then(function(data){
+        console.log(data)
+      console.log(data.data.fiveDayweatherimperial)
+      console.log(data.data.weatherDataimperial.main.temp)  
+      document.querySelector('#f1 h1').textContent = `${Math.floor(data.data.fiveDayweatherimperial.list[1].main.temp_max)}°F/${Math.floor(data.data.fiveDayweatherimperial.list[1].main.temp_min)}°F`
+      document.querySelector('#f2 h1').textContent = `${Math.floor(data.data.fiveDayweatherimperial.list[3].main.temp_max)}°F/${Math.floor(data.data.fiveDayweatherimperial.list[3].main.temp_min)}°F`
+      document.querySelector('#f3 h1').textContent = `${Math.floor(data.data.fiveDayweatherimperial.list[5].main.temp_max)}°F/${Math.floor(data.data.fiveDayweatherimperial.list[5].main.temp_min)}°F`
+      document.querySelector('#f4 h1').textContent = `${Math.floor(data.data.fiveDayweatherimperial.list[7].main.temp_max)}°F/${Math.floor(data.data.fiveDayweatherimperial.list[7].main.temp_min)}°F`
+      document.querySelector('#f5 h1').textContent = `${Math.floor(data.data.fiveDayweatherimperial.list[9].main.temp_max)}°F/${Math.floor(data.data.fiveDayweatherimperial.list[9].main.temp_min)}°F`
+      document.querySelector('#f6 h1').textContent = `${Math.floor(data.data.fiveDayweatherimperial.list[11].main.temp_max)}°F/${Math.floor(data.data.fiveDayweatherimperial.list[11].main.temp_min)}°F`
+      document.querySelector('#f7 h1').textContent = `${Math.floor(data.data.fiveDayweatherimperial.list[13].main.temp_max)}°F/${Math.floor(data.data.fiveDayweatherimperial.list[13].main.temp_min)}°F`
+      document.querySelector('#f8 h1').textContent = `${Math.floor(data.data.fiveDayweatherimperial.list[15].main.temp_max)}°F/${Math.floor(data.data.fiveDayweatherimperial.list[15].main.temp_min)}°F`
+      document.querySelector('#f9 h1').textContent = `${Math.floor(data.data.fiveDayweatherimperial.list[17].main.temp_max)}°F/${Math.floor(data.data.fiveDayweatherimperial.list[17].main.temp_min)}°F`
+      document.querySelector('#f10 h1').textContent = `${Math.floor(data.data.fiveDayweatherimperial.list[19].main.temp_max)}°F/${Math.floor(data.data.fiveDayweatherimperial.list[19].main.temp_min)}°F`
+      document.querySelector('#f11 h1').textContent = `${Math.floor(data.data.fiveDayweatherimperial.list[21].main.temp_max)}°F/${Math.floor(data.data.fiveDayweatherimperial.list[21].main.temp_min)}°F`
+      document.querySelector('#f12 h1').textContent = `${Math.floor(data.data.fiveDayweatherimperial.list[23].main.temp_max)}°F/${Math.floor(data.data.fiveDayweatherimperial.list[23].main.temp_min)}°F`
+      document.querySelector('#f13 h1').textContent = `${Math.floor(data.data.fiveDayweatherimperial.list[25].main.temp_max)}°F/${Math.floor(data.data.fiveDayweatherimperial.list[25].main.temp_min)}°F`
+      document.querySelector('#f14 h1').textContent = `${Math.floor(data.data.fiveDayweatherimperial.list[27].main.temp_max)}°F/${Math.floor(data.data.fiveDayweatherimperial.list[27].main.temp_min)}°F`
+      document.querySelector('#f15 h1').textContent = `${Math.floor(data.data.fiveDayweatherimperial.list[29].main.temp_max)}°F/${Math.floor(data.data.fiveDayweatherimperial.list[29].main.temp_min)}°F`
+      document.querySelector('#f16 h1').textContent = `${Math.floor(data.data.fiveDayweatherimperial.list[31].main.temp_max)}°F/${Math.floor(data.data.fiveDayweatherimperial.list[31].main.temp_min)}°F`
+      document.querySelector('#f17 h1').textContent = `${Math.floor(data.data.fiveDayweatherimperial.list[33].main.temp_max)}°F/${Math.floor(data.data.fiveDayweatherimperial.list[33].main.temp_min)}°F`
+      document.querySelector('#f18 h1').textContent = `${Math.floor(data.data.fiveDayweatherimperial.list[35].main.temp_max)}°F/${Math.floor(data.data.fiveDayweatherimperial.list[35].main.temp_min)}°F`
+      document.querySelector('#f19 h1').textContent = `${Math.floor(data.data.fiveDayweatherimperial.list[37].main.temp_max)}°F/${Math.floor(data.data.fiveDayweatherimperial.list[37].main.temp_min)}°F`
+      document.querySelector('#f20 h1').textContent = `${Math.floor(data.data.fiveDayweatherimperial.list[39].main.temp_max)}°F/${Math.floor(data.data.fiveDayweatherimperial.list[39].main.temp_min)}°F`
+
+    })
+  })
+ 
+ 
+
+</script>
+</html>

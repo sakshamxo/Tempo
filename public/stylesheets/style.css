@@ -1,0 +1,369 @@
+*{
+  margin: 0%;
+  padding: 0%;
+  box-sizing: border-box;
+  cursor: default;
+}
+
+html,body{
+  width: 100%;
+  height: 100%;
+}
+#main{
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+  background-color: rgb(46, 46, 46);
+}
+#nav{
+  width: 100vw;
+  height: 6vh;
+margin-top: 1vh;
+margin: 2;
+}
+#nav #logo{
+  width: 10vw;
+  height: 6vh;
+z-index: 99;
+  margin-left: 1vw;
+ display: flex;
+ align-items: center;
+ justify-content: space-between;
+}
+#logo .lo{
+  width: 40px;
+  height: 40px;
+z-index: 99;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center;
+  overflow: hidden;
+}
+#logo .na{
+  width: 7vw;
+  height: 6vh;
+z-index: 99;
+  padding: 10px;
+  color: #fff;
+}
+.lo img{
+  width: 100%;
+  height: 100%;
+}
+.tag span{
+  color: #353636;
+ 
+}
+#box{
+  width: 60vw;
+  height: 100vh;
+position: relative;
+ z-index: 99;
+}
+#box .tag{
+  width: 50vw;
+  height: 20vh;
+  position: absolute;
+  top: 12vh;
+  left: 3vw;
+  text-align: center;
+  font-size: 2rem;
+  color: #fff;
+  z-index: 99;
+}
+.tag h2{
+  font-size: 1.4rem;
+}
+.tag h4{
+  font-size: 1.4rem;
+}
+.sear{
+  width: 35vw;
+ display: flex;
+ align-items: center;
+ justify-content: space-between;
+z-index: 99;
+  position: absolute;
+  top: 50vh;
+  left: 13vw;
+}
+.sear #che{
+  
+  display: none;
+}
+.sear button{
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: none;
+  font-size: 1.5rem;
+  text-align: center;
+  color: #fff;
+  background-color: #5ebde2;
+  transition: all cubic-bezier(0.19, 1, 0.22, 1) .5s;
+}
+.sear button:hover{
+  color: #1c1c1c;
+  background-color: #fff;
+}
+#autoComplete{
+  width: 30vw;
+  height: 7vh;
+  border-radius: 40px;
+  border: none;
+  text-align: center;
+  font-size: 1rem;
+  outline: none;
+}
+#match-list{
+
+  width: 27vw;
+  height: 6vh;
+  background-color: #d9dad9;
+  border-radius: 20px;
+  margin-top: .2vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.3vmax;
+}
+#match-list:hover{
+  color: #fff;
+  background-color: #353636;
+  box-shadow: 5px 10px 5px #a4a4a4 ;
+}
+#matches{
+  width: 31vw;
+  max-height: 27vh;
+  min-height: min-content;
+display: none;
+place-items: center;
+  overflow-y: scroll;
+/* display: grid;
+place-items: center; */
+scroll-behavior: smooth;
+scrollbar-width: thin;
+}
+#matches::-webkit-scrollbar{
+  width: 10px;
+}
+
+#amto{
+  width: 35vw;
+  height: 7vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+#dis{
+  width: 50vw;
+  height: 70vh;
+z-index: 99;
+  position: absolute;
+ top: 50%;
+ left: 50%;
+ transform: translate(0%,-50%);
+
+}
+#dis #circ{
+width: 20vw;
+height: 40vh;
+border-radius: 50%;
+position: absolute;
+top: 50%;
+left: 27%;
+transform: translate(0%,-50%);
+
+object-fit: cover;
+object-position: center;
+overflow: hidden;
+}
+#dis #circ img{
+  width: 100%;
+  height: 100%;
+}
+#dis img{
+width: 50vw;
+height: 90vh;
+position: absolute;
+top: 50%;
+left: 50%;
+transform: translate(-50%,-50%);
+
+}
+#main .cir1{
+  width: 20vw;
+  height: 40vh;
+ background: linear-gradient(-45deg, #a245dc, #f45290, #0fa8df, #66edcc);
+	background-size: 400% 400%;
+	animation: gradient 15s ease infinite;
+
+  border-radius: 50%;
+  position: absolute;
+  z-index: 0;
+  top: 40vh;
+}
+#main .cir2{
+  width: 20vw;
+  height: 40vh;
+ background: linear-gradient(-45deg, #565656, #009ee2, #71b233, #9c9c9c);
+	background-size: 400% 400%;
+	animation: gradient 15s ease infinite;
+
+  border-radius: 50%;
+  position: absolute;
+  z-index: 0;
+  top: 10vh;
+  left: 30vw;
+}
+
+#main .cir3{
+  width: 20vw;
+  height: 40vh;
+ background: linear-gradient(-45deg, #0a582b, #00a9e2, #bd2fcf, #f65c5c);
+	background-size: 400% 400%;
+	animation: gradient 15s ease infinite;
+
+  border-radius: 50%;
+  position: absolute;
+  z-index: 0;
+  top: -10vh;
+  left: 85vw;
+}
+
+#main .cir4{
+  width: 20vw;
+  height: 40vh;
+ background: linear-gradient(-45deg, #f8f8f8, #2cfbf1, #ba1231, #b541e0);
+	background-size: 400% 400%;
+	animation: gradient 15s ease infinite;
+
+  border-radius: 50%;
+  position: absolute;
+  z-index: 0;
+  top: 75vh;
+  left: 55vw;
+}
+
+#main .cir5{
+  width: 20vw;
+  height: 40vh;
+ background: linear-gradient(-45deg, #0b906a, #8337c2, #0368a3, #cad252);
+	background-size: 400% 400%;
+	animation: gradient 15s ease infinite;
+
+  border-radius: 50%;
+  position: absolute;
+  z-index: 0;
+  top: -10vh;
+  left: -5vw;
+}
+
+#main .cir6{
+  width: 20vw;
+  height: 40vh;
+ background: linear-gradient(-45deg, #1dbe12, #ba91e4, #c247dd, #349fe1);
+	background-size: 400% 400%;
+	animation: gradient 15s ease infinite;
+
+  border-radius: 50%;
+  position: absolute;
+  z-index: 0;
+  top: 56vh;
+  left: 83vw;
+}
+
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+
+@media only screen and (max-width: 600px) {
+  .selection {
+    margin-top: 15vh;
+  }
+  #box .tag{
+        width: 95vw;
+    height: 20vh;
+    top: 4vh;
+  }
+ .tag h1{
+  font-size: 2rem;
+ }
+ .tag h2{
+  font-size: 1.3rem;
+ }
+.tag h4{
+  font-size: 1.1rem;
+}
+#autoComplete{
+  width: 43vw;
+  height: 6vh;
+}
+.sear{
+  width: 59vw;
+top: 55vh;
+  left: 26vw;
+}
+#dis{
+  left: 25%;
+  top: 42%;
+}
+#dis img{
+      width: 99vw;
+    height: 52vh;
+  
+}
+#dis #circ{
+  width: 34vw;
+  height: 20vh;
+  left:  10vw;
+}
+#nav #logo{
+  width: 16vw;
+}
+#main .cir3{
+  width: 54vw;
+    height: 24vh;
+        left: 61vw;
+        top: -2vh;
+}
+#logo .na{
+  height: 5vh;
+}
+#main .cir1{
+  width: 53vw;
+      height: 25vh;
+    top: 56vh ;
+}
+#main .cir2{
+  width: 54vw;
+    height: 29vh;
+    top: 21vh;
+    left: 18vw;
+}
+#main .cir5{
+  width: 54vw;
+    height: 24vh;
+}
+#main .cir6{
+  width: 54vw;
+    height: 25vh;
+    top: 63vh;
+    left: 73vw;
+}
+#main .cir4{
+      width: 54vw;
+    height: 24vh;
+    top: 84vh;
+    left: 27vw;
+}
+}
